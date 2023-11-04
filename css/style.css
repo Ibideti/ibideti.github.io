@@ -1,0 +1,240 @@
+
+.bg-waves{
+  background-color: #c723b1;
+  opacity: 0.8;
+  background-image: radial-gradient(circle at center center, #98159c, #000000), repeating-radial-gradient(circle at center center, #662463, #9316a3, 15px, transparent 25px, transparent 10px);
+  background-blend-mode: multiply;
+}
+.bg-waves-1{
+  background-attachment: fixed;
+  background-color: #c723b1;
+  opacity: 0.8;
+  background-image: radial-gradient(circle at center center, #98159c, #000000), repeating-radial-gradient(circle at center center, #662463, #9316a3, 15px, transparent 25px, transparent 10px);
+  background-blend-mode: multiply;
+}
+p {
+  text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+}
+.container-cxc {
+  color: #e5e5e5;
+  font-size: 4vw;
+  text-transform: uppercase;
+  height: 20vh;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.animation-cxc {
+  height: 5vw;
+  overflow: hidden;
+}
+
+.animation-cxc > div > div {
+  height: 5rem;
+  margin-bottom: 5rem;
+  display: inline;
+}
+
+.animation-cxc div:first-child {
+  animation: text-animation 10s infinite;
+  animation-timing-function: ease-in-out;
+
+}
+
+@keyframes text-animation {
+   0% {margin-top: -0%; margin-inline: -0rem;}
+   25% {margin-top: -6.2vw; margin-inline: -5vw;}
+   50% {margin-top: -12.0vw; margin-inline: 1.5rem;}
+   75% {margin-top: -6.2vw; margin-inline: -3.5rem;}
+   100% {margin-top: -0%; margin-inline: 0rem;}
+}
+
+body{
+  background: pink;
+}
+
+:root{
+  --gr-1:linear-gradient(170deg, #f801a6 0%, #de1dde 100%);
+  --gr-2:linear-gradient(170deg, #ec51d2 0%, #862193 100%);
+  --gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
+}
+
+.gr-1{background: var(--gr-1);}
+.gr-2{background: var(--gr-2);}
+.gr-3{background: var(--gr-3);}
+
+*{transition: .5s;}
+
+.align-middle{
+  position: relative;
+  top:0%;
+  transform:translateY(-0%);
+}
+
+.column{
+  margin-top:3rem;
+  padding-left:3rem;
+  &:hover{
+    padding-left:0;
+    .card.txt{
+      margin-left:1rem;
+      h1, p{
+        color:rgba(255,255,255,1);
+        opacity:1;
+      }
+    }
+    a{
+      color:rgba(255,255,255,1);
+      &:after{
+      width: 10%;
+      }
+    }
+  }
+}
+
+.card{
+  min-height:220px;
+  margin: 0;
+  padding: 1.5rem 1.2rem;
+  border: none;
+  border-radius: 0;
+  color:rgba(0,0,0,1);
+  letter-spacing: .03rem;
+  font-family: 'Oswald', sans-serif;
+  box-shadow: 0 0 21px rgba(0,0,0,.27);
+}
+.txt{
+    .p{
+      font-size: 2rem;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 2rem;
+      margin-top:33px;
+      opacity:0;
+      color:rgba(255,255,255,1);
+      z-index: 5;
+      }
+  }
+  a.link-dark{
+    z-index: 99;
+  }
+  
+  .txt.a{
+    z-index:3;
+    font-size: 1rem;
+    color:rgba(0,0,0,1);
+    margin-left:1rem;
+    position:relative;
+    bottom: -.5rem;
+    text-transform: uppercase;
+    &:after {
+      content:"";
+      display: flex;
+      height: 5em;
+      width: 0;
+      margin-right: -100%;
+      margin-left: 10px;
+      border-top: 1px solid rgb(255, 255, 255)
+    }
+  }
+  .ico-card{
+    position:absolute;
+    top: 0;
+    left:0;
+    bottom:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  i{
+    position: static;
+    right: -50%;
+    top:60%;
+    font-size: 12rem;
+    line-height: 0;
+    opacity: .2;
+    color:rgba(255,255,255,1)!important;
+    z-index: 1;
+   }
+
+ul
+  {&.results{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}}
+
+li {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.2s ease;
+}
+
+ul:is(:hover, :focus-within) img {
+  opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
+  filter: grayscale(calc(1 - var(--active-lerp, 0)));
+}
+
+:root {
+  --lerp-0: 1;
+  --lerp-1: 0.5787037;
+  --lerp-2: 0.2962963;
+  --lerp-3: 0.125;
+  --lerp-4: 0.037037;
+  --lerp-5: 0.0046296;
+  --lerp-6: 0;
+}
+
+a {
+  outline-offset: 4px;
+}
+
+.carousel li {
+  flex: calc(0.2 + (var(--active-lerp, 0) * 1));
+  transition: flex 0.2s ease;
+}
+
+.carousel li:is(:hover, :focus-within) {
+  --active-lerp: var(--lerp-0);
+  z-index: 7;
+}
+.carousel li:has( + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li {
+  --active-lerp: var(--lerp-1);
+  z-index: 6;
+}
+.carousel li:has( + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li {
+  --active-lerp: var(--lerp-2);
+  z-index: 5;
+}
+.carousel li:has( + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li {
+  --active-lerp: var(--lerp-3);
+  z-index: 4;
+}
+.carousel li:has( + li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li {
+  --active-lerp: var(--lerp-4);
+  z-index: 3;
+}
+.carousel li:has( + li + li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li + li {
+  --active-lerp: var(--lerp-5);
+  z-index: 2;
+}
+.carousel li:has( + li + li + li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li + li + li {
+  --active-lerp: var(--lerp-6);
+  z-index: 1;
+}
